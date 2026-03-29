@@ -1,0 +1,88 @@
+{
+  "groups": [
+    {
+      "name": "api",
+      "type": "com.douyin.shipping.config.ApiConfig",
+      "sourceType": "com.douyin.shipping.config.ApiConfig"
+    },
+    {
+      "name": "api.douyin",
+      "type": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
+      "sourceType": "com.douyin.shipping.config.ApiConfig",
+      "sourceMethod": "getDouyin()"
+    },
+    {
+      "name": "api.kdniao",
+      "type": "com.douyin.shipping.config.ApiConfig$KdniaoConfig",
+      "sourceType": "com.douyin.shipping.config.ApiConfig",
+      "sourceMethod": "getKdniao()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.douyin.app-key",
+      "type": "java.lang.String",
+      "description": "应用Key",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
+    },
+    {
+      "name": "api.douyin.app-secret",
+      "type": "java.lang.String",
+      "description": "应用密钥",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
+    },
+    {
+      "name": "api.douyin.gateway-url",
+      "type": "java.lang.String",
+      "description": "API网关地址",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
+      "defaultValue": "https:\/\/openapi-fxg.jinritemai.com"
+    },
+    {
+      "name": "api.douyin.sandbox",
+      "type": "java.lang.Boolean",
+      "description": "是否沙箱环境",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "api.douyin.sandbox-url",
+      "type": "java.lang.String",
+      "description": "沙箱环境地址",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
+      "defaultValue": "https:\/\/openapi-sandbox.jinritemai.com"
+    },
+    {
+      "name": "api.douyin.shop-id",
+      "type": "java.lang.String",
+      "description": "店铺ID",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
+    },
+    {
+      "name": "api.kdniao.api-key",
+      "type": "java.lang.String",
+      "description": "API Key",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig"
+    },
+    {
+      "name": "api.kdniao.callback-url",
+      "type": "java.lang.String",
+      "description": "轨迹订阅回调地址（可选，用于接收快递鸟推送的轨迹）",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig"
+    },
+    {
+      "name": "api.kdniao.e-business-id",
+      "type": "java.lang.String",
+      "description": "商户ID",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig"
+    },
+    {
+      "name": "api.kdniao.req-url",
+      "type": "java.lang.String",
+      "description": "请求地址",
+      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig",
+      "defaultValue": "https:\/\/api.kdniao.com\/Ebusiness\/EbusinessOrderHandle.aspx"
+    }
+  ],
+  "hints": []
+}
