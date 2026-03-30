@@ -6,12 +6,6 @@
       "sourceType": "com.douyin.shipping.config.ApiConfig"
     },
     {
-      "name": "api.douyin",
-      "type": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
-      "sourceType": "com.douyin.shipping.config.ApiConfig",
-      "sourceMethod": "getDouyin()"
-    },
-    {
       "name": "api.kdniao",
       "type": "com.douyin.shipping.config.ApiConfig$KdniaoConfig",
       "sourceType": "com.douyin.shipping.config.ApiConfig",
@@ -19,45 +13,6 @@
     }
   ],
   "properties": [
-    {
-      "name": "api.douyin.app-key",
-      "type": "java.lang.String",
-      "description": "应用Key",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
-    },
-    {
-      "name": "api.douyin.app-secret",
-      "type": "java.lang.String",
-      "description": "应用密钥",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
-    },
-    {
-      "name": "api.douyin.gateway-url",
-      "type": "java.lang.String",
-      "description": "API网关地址",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
-      "defaultValue": "https:\/\/openapi-fxg.jinritemai.com"
-    },
-    {
-      "name": "api.douyin.sandbox",
-      "type": "java.lang.Boolean",
-      "description": "是否沙箱环境",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
-      "defaultValue": false
-    },
-    {
-      "name": "api.douyin.sandbox-url",
-      "type": "java.lang.String",
-      "description": "沙箱环境地址",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig",
-      "defaultValue": "https:\/\/openapi-sandbox.jinritemai.com"
-    },
-    {
-      "name": "api.douyin.shop-id",
-      "type": "java.lang.String",
-      "description": "店铺ID",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$DouyinConfig"
-    },
     {
       "name": "api.kdniao.api-key",
       "type": "java.lang.String",

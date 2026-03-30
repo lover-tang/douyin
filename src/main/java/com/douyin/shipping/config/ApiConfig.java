@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * API配置类
- * 配置抖店和快递鸟的API参数
+ * 配置快递鸟API参数
  */
 @Data
 @Configuration
@@ -14,47 +14,9 @@ import org.springframework.context.annotation.Configuration;
 public class ApiConfig {
 
     /**
-     * 抖店API配置
-     */
-    private DouyinConfig douyin = new DouyinConfig();
-
-    /**
      * 快递鸟API配置
      */
     private KdniaoConfig kdniao = new KdniaoConfig();
-
-    @Data
-    public static class DouyinConfig {
-        /**
-         * 应用Key
-         */
-        private String appKey;
-
-        /**
-         * 应用密钥
-         */
-        private String appSecret;
-
-        /**
-         * 店铺ID
-         */
-        private String shopId;
-
-        /**
-         * API网关地址
-         */
-        private String gatewayUrl = "https://openapi-fxg.jinritemai.com";
-
-        /**
-         * 是否沙箱环境
-         */
-        private boolean sandbox = false;
-
-        /**
-         * 沙箱环境地址
-         */
-        private String sandboxUrl = "https://openapi-sandbox.jinritemai.com";
-    }
 
     @Data
     public static class KdniaoConfig {

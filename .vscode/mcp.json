@@ -1,0 +1,14 @@
+{
+  "servers": [
+    {
+      "name": "yuque-mcp",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@HenryHaoson/Yuque-MCP-Server"],
+      "env": {
+        "YUQUE_API_TOKEN": "${YUQUE_API_TOKEN}",
+        "YUQUE_API_BASE_URL": "https://www.yuque.com/api/v2"
+      }
+    }
+  ]
+}

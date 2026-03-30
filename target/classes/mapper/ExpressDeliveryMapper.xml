@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.douyin.shipping.mapper.ExpressDeliveryMapper">
+
+    <resultMap id="BaseResultMap" type="ExpressDelivery">
+        <id column="id" property="id"/>
+        <result column="ebusiness_id" property="ebusinessId"/>
+        <result column="shipper_code" property="shipperCode"/>
+        <result column="logistic_code" property="logisticCode"/>
+        <result column="order_code" property="orderCode"/>
+        <result column="state" property="state"/>
+        <result column="state_ex" property="stateEx"/>
+        <result column="location" property="location"/>
+        <result column="delivery_man_name" property="deliveryManName"/>
+        <result column="delivery_man_tel" property="deliveryManTel"/>
+        <result column="estimated_delivery_time" property="estimatedDeliveryTime"/>
+        <result column="first_query_time" property="firstQueryTime"/>
+        <result column="last_update_time" property="lastUpdateTime"/>
+        <result column="is_subscribed" property="isSubscribed"/>
+        <result column="callback_url" property="callbackUrl"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, ebusiness_id, shipper_code, logistic_code, order_code, state, state_ex,
+        location, delivery_man_name, delivery_man_tel, estimated_delivery_time,
+        first_query_time, last_update_time, is_subscribed, callback_url, remark
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO express_delivery (
+            ebusiness_id, shipper_code, logistic_code, order_code, state, state_ex,
+            location, delivery_man_name, delivery_man_tel, estimated_delivery_time,
+            is_subscribed, callback_url, remark
+        ) VALUES (
+            #{ebusinessId}, #{shipperCode}, #{logisticCode}, #{orderCode}, #{state}, #{stateEx},
+            #{location}, #{deliveryManName}, #{deliveryManTel}, #{estimatedDeliveryTime},
+            #{isSubscribed}, #{callbackUrl}, #{remark}
+        )
+    </insert>
+
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery WHERE id = #{id}
+    </select>
+
+    <select id="findByLogisticCodeAndShipperCode" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery 
+        WHERE logistic_code = #{logisticCode} AND shipper_code = #{shipperCode}
+    </select>
+
+    <select id="findByLogisticCode" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery WHERE logistic_code = #{logisticCode}
+    </select>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery
+    </select>
+
+    <select id="findByState" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery WHERE state = #{state}
+    </select>
+
+    <select id="findByIsSubscribed" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery WHERE is_subscribed = #{isSubscribed}
+    </select>
+
+    <select id="findByLastUpdateTimeBefore" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM express_delivery WHERE last_update_time &lt; #{time}
+    </select>
+
+    <update id="updateState">
+        UPDATE express_delivery 
+        SET state = #{state}, location = #{location}, last_update_time = NOW() 
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateSubscription">
+        UPDATE express_delivery 
+        SET is_subscribed = #{isSubscribed}, callback_url = #{callbackUrl} 
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateDeliveryMan">
+        UPDATE express_delivery 
+        SET delivery_man_name = #{name}, delivery_man_tel = #{tel} 
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM express_delivery WHERE id = #{id}
+    </delete>
+
+</mapper>
