@@ -4,7 +4,6 @@ import com.douyin.shipping.client.KdniaoClient;
 import com.douyin.shipping.client.dto.TraceItem;
 import com.douyin.shipping.client.dto.TrackingRequest;
 import com.douyin.shipping.client.dto.TrackingResponse;
-import com.douyin.shipping.client.enums.KdniaoShipperCode;
 import com.douyin.shipping.config.ApiConfig;
 import com.douyin.shipping.entity.ExpressTrack;
 import lombok.extern.slf4j.Slf4j;
