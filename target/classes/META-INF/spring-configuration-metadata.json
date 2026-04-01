@@ -35,8 +35,7 @@
       "name": "api.kdniao.req-url",
       "type": "java.lang.String",
       "description": "请求地址",
-      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig",
-      "defaultValue": "https:\/\/api.kdniao.com\/Ebusiness\/EbusinessOrderHandle.aspx"
+      "sourceType": "com.douyin.shipping.config.ApiConfig$KdniaoConfig"
     }
   ],
   "hints": []

@@ -33,7 +33,7 @@ public class ApiConfig {
         /**
          * 请求地址
          */
-        private String reqUrl = "https://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx";
+        private String reqUrl;
 
         /**
          * 轨迹订阅回调地址（可选，用于接收快递鸟推送的轨迹）

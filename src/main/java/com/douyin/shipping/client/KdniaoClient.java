@@ -1,52 +1,29 @@
 package com.douyin.shipping.client;
 
-import com.douyin.shipping.client.dto.*;
-
-import java.util.List;
-
 /**
- * 快递鸟客户端通用接口
- * 对外提供简洁的API调用方式
+ * 快递鸟HTTP客户端接口
+ * 只负责封装HTTP请求和基础参数（签名、EBusinessID等）
  */
 public interface KdniaoClient {
 
     /**
-     * 即时查询物流轨迹
-     *
-     * @param request 查询请求参数
-     * @return 轨迹查询结果
+     * 快递鸟API请求类型常量
      */
-    TrackingResponse queryTracking(TrackingRequest request);
+    interface RequestType {
+        /** 即时查询 */
+        String QUERY_TRACKING = "8002";
+        /** 轨迹订阅 */
+        String SUBSCRIBE_TRACKING = "1008";
+        /** 单号识别 */
+        String RECOGNIZE_SHIPPER = "2002";
+    }
 
     /**
-     * 订阅物流轨迹推送
+     * 发送快递鸟API请求
      *
-     * @param request 订阅请求参数
-     * @return 是否订阅成功
+     * @param requestData 业务请求数据（JSON字符串）
+     * @param requestType 请求类型，使用 {@link RequestType} 常量
+     * @return API响应JSON字符串
      */
-    boolean subscribeTracking(SubscribeRequest request);
-
-    /**
-     * 批量订阅物流轨迹
-     *
-     * @param requests 订阅请求列表
-     * @return 批量订阅结果
-     */
-    BatchSubscribeResponse batchSubscribeTracking(List<SubscribeRequest> requests);
-
-    /**
-     * 单号识别（自动识别快递公司）
-     *
-     * @param request 单号识别请求
-     * @return 识别结果列表
-     */
-    List<ShipperRecognizeResponse> recognizeShipper(ShipperRecognizeRequest request);
-
-    /**
-     * 获取物流状态描述
-     *
-     * @param state 状态码
-     * @return 状态描述
-     */
-    String getStateDescription(String state);
+    String sendRequest(String requestData, String requestType);
 }
